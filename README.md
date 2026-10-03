@@ -130,4 +130,4 @@ npm install
 npm run dev
 ```
 
-The app listens on port 3000 and serves the route manifest at `/manus-routes.json`.
+The app listens on port 3000 
