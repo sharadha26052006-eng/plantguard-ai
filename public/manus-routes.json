@@ -1,0 +1,14 @@
+{
+  "routes": [
+    { "path": "/", "title": "Operations Dashboard" },
+    { "path": "/fleet", "title": "Machine Fleet" },
+    { "path": "/health", "title": "Machine Health Analytics" },
+    { "path": "/risk", "title": "Risk Analysis" },
+    { "path": "/decision", "title": "AI Decision Center" },
+    { "path": "/workflow", "title": "Workflow Monitor" },
+    { "path": "/actions", "title": "Maintenance Actions" },
+    { "path": "/incidents", "title": "Incident Reports" },
+    { "path": "/data", "title": "Data Explorer" },
+    { "path": "/architecture", "title": "System Architecture" }
+  ]
+}

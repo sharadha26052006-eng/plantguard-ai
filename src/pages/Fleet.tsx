@@ -1,0 +1,8 @@
+import { useDemoFlow } from '../state/DemoFlowContext';
+import { MachineTable } from '../components/MachineTable';
+import { navigate } from '../components/AppShell';
+
+export function Fleet() {
+  const { selectedMachine, selectMachine } = useDemoFlow();
+  return <div className="page-stack"><section className="page-heading"><div><div className="eyebrow">OPERATIONS / ASSET REGISTER</div><h1>Machine fleet</h1><p>Prioritized view of machine health, risk, degradation, and operational response state.</p></div><div className="heading-actions"><span className="demo-label"><span className="status-dot"></span>DEMONSTRATION DATA</span><button className="button button-outline" onClick={() => navigate('/health')}>OPEN HEALTH ANALYTICS ↗</button></div></section><section className="summary-ribbon"><div><span className="eyebrow">SELECTED MACHINE</span><strong>{selectedMachine.id} / {selectedMachine.type}</strong></div><div><span className="eyebrow">HEALTH</span><strong className="critical-number">{selectedMachine.health}<small>/100</small></strong></div><div><span className="eyebrow">NEXT ACTION</span><strong>{selectedMachine.action}</strong></div><div><span className="eyebrow">DATA POLICY</span><strong className="muted">PUBLIC STRUCTURE / DEMO</strong></div></section><section className="panel table-panel"><div className="panel-header"><div><span className="eyebrow">FLEET REGISTER / 48 MACHINES</span><h2>Risk-prioritized asset list</h2></div><div className="table-tools"><button className="filter-button">ALL RISK LEVELS⌄</button><button className="filter-button">ALL STATUS⌄</button></div></div><MachineTable selectedId={selectedMachine.id} onSelect={(machine) => { selectMachine(machine.id); navigate('/health'); }} /></section></div>;
+}
